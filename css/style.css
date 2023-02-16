@@ -77,3 +77,6 @@ main{
     color: #fff;
     border-radius: 2px;
 }
+.submit:hover{
+    background-color:darksalmon;
+}
