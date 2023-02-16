@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <div class="headerCont">
+            <div class="logoCont">
+                <a href="./index.html"><h1>Q<span>comer</span></h1></a>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="mainCont" id="mainCont">
+            <p class="texto-explicativo" id="texto-explicativo">Deja de pensar y pensar en que cocinar durante el mes, selecciona un rango de fechas y "Qcomer" te dará opciones balanceadas.</p>
+            <div class="selector-fechas" id="selector-fechas">
+                <p class="rango-fechas" id="rango-fechas">Selecciona la fecha de inicio y la fecha final de la lista:</p>
+                <input type="date" name="fecha-inicio" id="fecha-inicio">
+                <input type="date" name="fecha-final" id="fecha-final">
+                <button class="submit" type="submit" id="submit">ACEPTAR</button>
+            </div>
+            <div class="listas-semanas">
+                <div class="semana1"></div>
+                <div class="semana2"></div>
+                <div class="semana3"></div>
+                <div class="semana4"></div>
+            </div>
+            <div class="lista-compras"></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./js/app.js"></script>
 </body>
 </html>
