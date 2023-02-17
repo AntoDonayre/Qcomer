@@ -42,18 +42,30 @@ const button = document.getElementById('submit').addEventListener('click',(e) =>
         'Caldo de gallina'
     ];
 
-    const inputCantidad = dias;
-    const cantidad = parseInt(inputCantidad);
+    // const inputCantidad = dias;
+    // const cantidad = parseInt(inputCantidad);
 
-    function seleccionarComidasAleatorias(array, cantidad) {
+    function seleccionarComidasAleatorias(array, dias) {
     const comidasSeleccionadas = [];
-    for (let i = 0; i < cantidad; i++) {
+    for (let i = 0; i < dias; i++) {
         const indiceAleatorio = Math.floor(Math.random() * array.length);
         comidasSeleccionadas.push(array[indiceAleatorio]);
     }
     return comidasSeleccionadas;
     }
 
-const comidasAleatorias = seleccionarComidasAleatorias(comidasPeruanas, cantidad);
-console.log(comidasAleatorias);
+    const comidasAleatorias = seleccionarComidasAleatorias(comidasPeruanas, dias);
+    console.log(comidasAleatorias);
+
+    for (let i = 0; i < comidasAleatorias.length; i+=1) {
+        const elemento = (comidasAleatorias[i]);
+
+        const divHijo = document.createElement("div");
+        divHijo.textContent = elemento;
+        const divPadre = document.getElementById("listas-semanas");
+        divPadre.appendChild(divHijo);
+    }
+    
+
+    
 });
