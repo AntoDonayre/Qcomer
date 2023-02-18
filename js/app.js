@@ -1,5 +1,11 @@
-const button = document.getElementById('submit').addEventListener('click',(e) => {
+const button = document.getElementById('submit')
+let botonHabilitado = true;
+
+button.addEventListener('click',(e) => {    
     
+    if (botonHabilitado) {
+        botonHabilitado = false;
+
     const fechaInicio = document.getElementById("fecha-inicio").value;
     const fechaFinal = document.getElementById("fecha-final").value;
     
@@ -42,9 +48,6 @@ const button = document.getElementById('submit').addEventListener('click',(e) =>
         'Caldo de gallina'
     ];
 
-    // const inputCantidad = dias;
-    // const cantidad = parseInt(inputCantidad);
-
     function seleccionarComidasAleatorias(array, dias) {
     const comidasSeleccionadas = [];
     for (let i = 0; i < dias; i++) {
@@ -61,11 +64,26 @@ const button = document.getElementById('submit').addEventListener('click',(e) =>
         const elemento = (comidasAleatorias[i]);
 
         const divHijo = document.createElement("div");
+        divHijo.setAttribute("class", "menu");
+        divHijo.setAttribute("id", "menuElemento");
         divHijo.textContent = elemento;
         const divPadre = document.getElementById("listas-semanas");
         divPadre.appendChild(divHijo);
-    }
+    } 
     
+    setTimeout(function() {
+        botonHabilitado = true;
+    }, 3000);
+}
+});
 
-    
+// Obtener el botón de reinicio
+const resetBtn = document.getElementById("resetBtn");
+
+// Agregar un evento de clic al botón de reinicio
+resetBtn.addEventListener("click", function() {
+  // Obtener los elementos de formulario por su ID y reiniciar sus valores
+  document.querySelectorAll("#menuElemento").forEach(function(elementReset){
+    elementReset.remove();
+  });
 });

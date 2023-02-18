@@ -72,6 +72,7 @@ main{
     min-width: 99px;
 }
 .submit{
+    margin: 1px;
     padding: 4px;
     border: none;
     background-color: darkred;
