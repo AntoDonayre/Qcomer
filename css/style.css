@@ -95,3 +95,22 @@ main{
     background-color: #fff;
     box-shadow: 0 3px 13px 1px rgb(0 0 0/ 15%);
 }
+@media (max-width: 845px){
+    .selector-fechas{
+        flex-direction: column;
+        height: auto;
+    }
+    .selector-fechas input{
+        width: 50%;
+    }
+    .selector-fechas .submit{
+        width: 50%;
+        font-size: 0.8em;
+    }
+    .texto-explicativo{
+        font-size: 0.8em;
+    }
+    .rango-fechas{
+        font-size: 0.8em;
+    }
+}
