@@ -26,26 +26,19 @@ button.addEventListener('click',(e) => {
     console.log(dias + ' días seleccionados.');
 
     const comidasPeruanas = [
-        'Ceviche', 
         'Lomo saltado', 
+        'Papa a la huancaina', 
         'Aji de gallina', 
-        'Papa a la huancaína', 
+        'Arroz chaufa', 
         'Arroz con pollo', 
-        'Tacu tacu', 
-        'Anticuchos', 
-        'Causa rellena', 
-        'Chaufa de pollo', 
-        'Seco de cordero', 
-        'Rocoto relleno', 
-        'Adobo de cerdo', 
-        'Chicharrón', 
-        'Pescado a la chorrillana', 
-        'Pachamanca', 
-        'Tallarines verdes', 
-        'Estofado de pollo', 
-        'Arroz con mariscos', 
-        'Picante de cuy', 
-        'Caldo de gallina'
+        'Seco de pollo', 
+        'Papa rellena',
+        'Causa rellena',
+        'Tallarines en salsa roja',
+        'frejoles',
+        'Puré de papa',
+        'Arverjita partida',
+        'Pollo a la Olla',
     ];
 
     function seleccionarComidasAleatorias(array, dias) {
