@@ -1,3 +1,5 @@
+import {comidasPeruanas} from './comidas.js';
+
 const button = document.getElementById('submit')
 let botonHabilitado = true;
 
@@ -23,46 +25,31 @@ button.addEventListener('click',(e) => {
     var dias = Math.ceil(diferenciaT / (1000 * 60 * 60 * 24));
 
     // imprimir el resultado
-    console.log(dias + ' días seleccionados.');
-
-    const comidasPeruanas = [
-        'Lomo saltado', 
-        'Papa a la huancaina', 
-        'Aji de gallina', 
-        'Arroz chaufa', 
-        'Arroz con pollo', 
-        'Seco de pollo', 
-        'Papa rellena',
-        'Causa rellena',
-        'Tallarines en salsa roja',
-        'frejoles',
-        'Puré de papa',
-        'Arverjita partida',
-        'Pollo a la Olla',
-    ];
+    //console.log(dias + ' días seleccionados.');
 
     function seleccionarComidasAleatorias(array, dias) {
-    const comidasSeleccionadas = [];
-    for (let i = 0; i < dias; i++) {
-        const indiceAleatorio = Math.floor(Math.random() * array.length);
-        comidasSeleccionadas.push(array[indiceAleatorio]);
-    }
-    return comidasSeleccionadas;
-    }
+        const comidasSeleccionadas = [];
+        for (let i = 0; i < dias; i+=1) {
+            const indiceAleatorio = Math.floor(Math.random() * array.length);
+            comidasSeleccionadas.push(array[indiceAleatorio]);
+        }
+        return comidasSeleccionadas;
+    };
 
     const comidasAleatorias = seleccionarComidasAleatorias(comidasPeruanas, dias);
     console.log(comidasAleatorias);
 
     for (let i = 0; i < comidasAleatorias.length; i+=1) {
         const elemento = (comidasAleatorias[i]);
-
-        const divHijo = document.createElement("div");
+        const divHijo = document.createElement("a");
         divHijo.setAttribute("class", "menu");
         divHijo.setAttribute("id", "menuElemento");
-        divHijo.textContent = elemento;
+        divHijo.setAttribute("target", "_blank");
+        divHijo.setAttribute("href", elemento.href);
+        divHijo.textContent = elemento.nombre;
         const divPadre = document.getElementById("listas-semanas");
         divPadre.appendChild(divHijo);
-    } 
+    };
     
     setTimeout(function() {
         botonHabilitado = true;
